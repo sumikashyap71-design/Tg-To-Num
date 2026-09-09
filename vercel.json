@@ -1,12 +1,18 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "api/tg2num.py",
+      "use": "@vercel/python"
+    }
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "/api/tg2num.py"
     },
     {
-      "src": "/",
+      "src": "/(.*)",
       "dest": "/api/tg2num.py"
     }
   ]
